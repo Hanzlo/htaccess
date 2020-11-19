@@ -11,10 +11,10 @@
     RewriteCond %{HTTP_HOST} !^(.+)\.(.+)\.(.+)
     RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,R=301]
 
-    # Redirect to https
-    RewriteCond %{HTTPS} !on
-    RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
-    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    # Redirect to https -> SSL TURN OF/ON
+    # RewriteCond %{HTTPS} !on
+    # RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
+    # RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # REWRITE ROUTE RULES
     # RewriteRule ^/this-is-old-link/$ /this-is-new-link [L,R=301]
@@ -125,9 +125,9 @@
 		ExpiresByType image/svg+xml                         "access plus 1 month"
 		ExpiresByType image/webp                            "access plus 1 month"
 		ExpiresByType video/ogg                             "access plus 1 month"
-		ExpiresByType video/webm 							"access plus 1 year"
-		ExpiresByType video/mp4 							"access plus 1 year"
-		ExpiresByType video/mpeg 							"access plus 1 year"
+		ExpiresByType video/webm 			    "access plus 1 year"
+		ExpiresByType video/mp4 			    "access plus 1 year"
+		ExpiresByType video/mpeg 			    "access plus 1 year"
 		
 	# Web fonts
     # Embedded OpenType (EOT)
